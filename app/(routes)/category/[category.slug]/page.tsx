@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useGetCategoryProduct } from "@/api/getCategoryProducts";
 import { ResponseType } from "@/types/response";
 import { useParams} from "next/navigation";
