@@ -28,7 +28,7 @@ export default function Page () {
             })
             removeAll()
 
-        } catch (error) {
+        } catch  {
         }
     }
 

@@ -3,11 +3,10 @@
 import { useGetCategories } from '@/api/getProducts';
 import Link from 'next/link'
 import { ResponseType } from '@/types/response';
-import { isUndefined } from 'util';
 import { CategoryType } from '@/types/category';
 
 const ChooseCategory = () => {
-    const { result, loading }: ResponseType = useGetCategories()
+    const { result }: ResponseType = useGetCategories()
 
     return (
         <div className='max-w-6xl py-4 mx-auto sm:py-16 sm:px-24'>
@@ -15,7 +14,7 @@ const ChooseCategory = () => {
 
             <div className='grid gap-5 sm:grid-cols-3'>
                 {result?.map((category: CategoryType) => {
-                    const { id, categoryName, slug, mainImage } = category;
+                    const { categoryName } = category;
 
 
                     return (

@@ -30,7 +30,7 @@ const FeaturedProducts = () => {
                     )}
                     {result !== null && (
                         result.map((product: ProductType) => {
-                            const { id, slug, images, productName, Brand, origin } = product; // No desestructuramos attributes
+                            const { id, slug, productName, Brand, origin } = product; // No desestructuramos attributes
 
                             return (
                                 <CarouselItem key={id} className="md:basis-2/3 lg:basis-2/3 group">

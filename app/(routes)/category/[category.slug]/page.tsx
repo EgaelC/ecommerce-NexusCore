@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useGetCategoryProduct } from "@/api/getCategoryProducts";
 import { ResponseType } from "@/types/response";
-import { useParams, useRouter } from "next/navigation";
+import { useParams} from "next/navigation";
 import FiltersControlCategory from "./components/filters-controls-category";
 import SkeletonSchema from "@/components/skeletonSchema";
 import ProductCard from "./components/product-card";
@@ -14,7 +14,6 @@ export default function Page() {
     const { "category.slug": categorySlug } = params as { "category.slug"?: string };
     const { result, loading, error }: ResponseType = useGetCategoryProduct(categorySlug);
     const [filterOrigin, setFilterOrigin] = useState('')
-    const router = useRouter()
 
 
     const filteredProducts = result !== null &&!loading && (
@@ -28,10 +27,7 @@ export default function Page() {
     }
 
 
-    useEffect(() => {
-        console.log("Productos recibidos:", result);
-    }, [result]);
-
+    
     // Retorna un mensaje de carga mientras se obtienen los productos
     if (loading) return (
         <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
