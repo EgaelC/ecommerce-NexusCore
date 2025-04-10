@@ -17,13 +17,13 @@ import {
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Gama Alta",
-    href: "/category/Gama Alta",
+    href: "/category/gama-alta",
     description:
       "Laptops diseñadas para los jugadores más exigentes y profesionales de eSports. Estas máquinas cuentan con los últimos procesadores, tarjetas gráficas de alto rendimiento (RTX 4080, RTX 4090), pantallas con altas tasas de refresco y sistemas de refrigeración avanzados. Son ideales para gaming competitivo, streaming en 4K y edición de video profesional.Laptops diseñadas para los jugadores más exigentes y profesionales de eSports. Estas máquinas cuentan con los últimos procesadores, tarjetas gráficas de alto rendimiento (RTX 4080, RTX 4090), pantallas con altas tasas de refresco y sistemas de refrigeración avanzados. Son ideales para gaming competitivo, streaming en 4K y edición de video profesional.",
   },
   {
     title: "Gama Media/Alta",
-    href: "/category/Gama Media/Alta",
+    href: "/category/gama-media",
     description:
       "Equipos equilibrados que ofrecen un gran rendimiento para gaming en 1080p o 1440p con configuraciones gráficas altas. Incorporan procesadores Intel Core i7 o AMD Ryzen 7, GPUs como RTX 4060 o RTX 4070 y pantallas con refresco de 144Hz o superior. Perfectas para jugadores que buscan calidad sin gastar en una configuración extrema.",
   },
@@ -36,7 +36,7 @@ const MenuList = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Sobre nosotros</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] bg-gray-200 lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <Link
@@ -59,16 +59,14 @@ const MenuList = () => {
               <ListItem href="/Offers" title="Ofertas">
                 Sección dedicada a promociones y descuentos especiales.
               </ListItem>
-              <ListItem href="/" title="Accesorios">
-                Accesorios útiles para llevar tu experiencia a otro nivel.
-              </ListItem>
+
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem >
           <NavigationMenuTrigger>Laptops</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 bg-gray-200 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
                 <ListItem
                   key={component.title}
@@ -81,13 +79,7 @@ const MenuList = () => {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/accesorios" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Accesorios
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+      
       </NavigationMenuList>
     </NavigationMenu>
   )
